@@ -170,7 +170,27 @@ An `OuterWalls` object must contain `Wall` in the name.
 
 ### Exporting A Maze
 
+We'll be exporting this maze as a GLB file.
 
+To begin, right click on the `BallMaze` object in your scene hierarchy and select `Select Hierarchy`
+
+<img src="https://github.com/user-attachments/assets/f59dbae8-71d7-4850-b64b-e2c582d4a877" alt="Select Hierarchy" width="300" />
+
+All of your objects should now be selected.
+
+<img src="https://github.com/user-attachments/assets/8c3f30f3-6645-4cdb-a8c6-0a1905e2e770" alt="Selected Objects" width="300" />
+
+From your `File` menu, select `Export/glTF (2.0) (.glb/.gltf)`
+
+<img src="https://github.com/user-attachments/assets/9395117c-652e-4555-a57b-b2ee579b16fd" alt="Selected Objects" width="300" />
+
+In the export panel, make sure `Format` is `gltfBinary (.glb)` is selected. This will export one `.glb` file with materials and textures packed inside.
+
+Make sure to also select `Include\Selected Objects` and `Mesh\Apply Modifiers` (if you used modifiers to punch out holes)
+
+<img src="https://github.com/user-attachments/assets/ababb45d-8c28-4147-8b82-df259b51e10b" alt="Export Panel" width="300" />
+
+Fill out your file name and complete the export.
 
 
 
