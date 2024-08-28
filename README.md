@@ -64,4 +64,18 @@ This object can have a mesh and should represent the outer ring of the maze floo
 
 <img src="https://github.com/user-attachments/assets/2199bca0-03cd-4f12-8be7-f90a4b091d02" alt="BoardX" width="200" />
 
+#### BoardY
+
+This object does not require a mesh, instead all the floors, walls, ramps, holes, spawnpoint, and goal rotate with it.
+
+It will NOT receive a collider, but its children will. 
+
+Make sure that there are walls that surround the maze floor to prevent the ball from rolling off the board.
+
+- Scale: x=1, y=1, z=1
+- Rotation: x=0, y=0, z=0
+  - The game will rotate the board around the local x axis at a range of -5 to 5 degrees when the user moves vertically.
+- Origin: the game will pivot the board at this point.
+
+<img src="https://github.com/user-attachments/assets/0d45a4f8-99b9-47df-9595-ac52e892210c" alt="BoardY" width="200" />
 
