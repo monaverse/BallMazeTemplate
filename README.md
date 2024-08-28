@@ -201,7 +201,8 @@ Fill out your file name and complete the export.
 
 To test a maze, upload it to a web server.  I typically use a pinning service like `Pinata` to host my files.
 
-I right click on the uploaded file and select `copy the link address`
+I right click on the uploaded file and select `copy the link address`.
+
 <img src="https://github.com/user-attachments/assets/b29194b0-0dd2-42ae-85f9-ddc3150e9990" alt="Export Panel" width="300" />
 
 Load the game up in your desktop browser, hold the `p` key and while holding the `p` key, press the `o` key. This allows you to load a glb manually.
