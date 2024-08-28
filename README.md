@@ -8,8 +8,7 @@ This guide will teach you the specifications of a maze glb that make it compatib
 
 ## Table of Contents
 
-* Object Hierarchy
-* Scaling
+* [Object Hierarchy](#object-hierarchy)
 * Exporting a Maze
 * Testing a Maze
 * Minting a Maze
@@ -33,3 +32,15 @@ When the Ball Maze game loads a maze glb, it looks for a specific object hierarc
 │   │   ├── AxisY
 │   │   └── AxisX
 ```
+
+#### BallMaze
+
+This object can have a mesh and should represent the outer shell of the maze.
+
+- Max Size: x 8m, y 8m, z 2m
+- Scale: x=1, y=1, z=1
+- Location: x=0, y=0, z=0
+- Rotation: x=0, y=0, z=0
+
+<img src="https://github.com/user-attachments/assets/e8f0f923-f45e-4d37-9fc5-a6e9c3c81fe8" alt="BallMaze" width="200" />
+
