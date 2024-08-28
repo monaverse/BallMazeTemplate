@@ -37,10 +37,10 @@ When the Ball Maze game loads a maze glb, it looks for a specific object hierarc
 
 This object can have a mesh and should represent the outer shell of the maze. It will NOT receive a collider.
 
-- Max Size: x 8m, y 8m, z 2m
-- Scale: x=1, y=1, z=1
-- Location: x=0, y=0, z=0
-- Rotation: x=0, y=0, z=0
+- Max Size: `x=8m,y=8m,z=2m`
+- Scale: `x=1,y=1,z=1`
+- Location: `x=0,y=0,z=0`
+- Rotation: `x=0,y=0,z=0`
 
 <img src="https://github.com/user-attachments/assets/e8f0f923-f45e-4d37-9fc5-a6e9c3c81fe8" alt="BallMaze" width="200" />
 
@@ -48,8 +48,8 @@ This object can have a mesh and should represent the outer shell of the maze. It
 
 This object should be a sphere with a diameter of 1m, the scale of this object determines the size of the ball in the game.
 
-- Max Size: x=1m, y=1m, z=1m
-- Scale: x=1, y=1, z=1
+- Max Size: `x=1m,y=1m,z=1m`
+- Scale: `x=1,y=1,z=1`
 
 <img src="https://github.com/user-attachments/assets/ed1f7052-23c5-41f4-9d01-8cf0ff8f697e" alt="Ball" width="200" />
 
@@ -57,8 +57,8 @@ This object should be a sphere with a diameter of 1m, the scale of this object d
 
 This object can have a mesh and should represent the outer ring of the maze floor. It will NOT receive a collider.
 
-- Scale: x=1, y=1, z=1
-- Rotation: x=0, y=0, z=0
+- Scale: `x=1,y=1,z=1`
+- Rotation: `x=0,y=0,z=0`
   - The game will rotate the board around the local y axis at a range of -5 to 5 degrees when the user moves horizontally.
 - Origin: the game will pivot the board at this point.
 
@@ -72,10 +72,39 @@ It will NOT receive a collider, but its children will.
 
 Make sure that there are walls that surround the maze floor to prevent the ball from rolling off the board.
 
-- Scale: x=1, y=1, z=1
-- Rotation: x=0, y=0, z=0
+- Scale: `x=1,y=1,z=1`
+- Rotation: `x=0,y=0,z=0`
   - The game will rotate the board around the local x axis at a range of -5 to 5 degrees when the user moves vertically.
 - Origin: the game will pivot the board at this point.
 
 <img src="https://github.com/user-attachments/assets/0d45a4f8-99b9-47df-9595-ac52e892210c" alt="BoardY" width="200" />
+
+#### BoardFloor
+
+This object must contain the word `BoardFloor` in its name.
+
+It will receive a Box Collider
+
+This object will have holes punched in it. Note that since it receives a Box Collider, the ball would roll right over the holes were it not for the `Hole.Empty` objects, which are described in the next section.
+
+- Scale: `x=1,y=1,z=1`
+- Rotation: `x=0,y=0,z=0`
+
+<img src="https://github.com/user-attachments/assets/4b55bac4-0714-4def-beca-d431b881e162" alt="BoardFloor" width="200" />
+
+#### Hole.Empty
+
+There should be one `Hole.Empty` object for each hole on the board. 
+
+It will receive a small Trigger that detects when the ball enters it.
+
+- Scale: the scale should be relative to 1.0 == 1meter
+  - for example, a hole with a .3m diameter should have a cooresponding `Hole.Empty` with a scale of `x=.3,y=.3,z=.3`
+- Rotation: `x=0,y=0,z=0`
+- Origin: the origin of each `Hole.Empty` should be at the center of the geometry of each hole on the `BoardFloor`
+
+<img src="https://github.com/user-attachments/assets/9c05cdbf-067e-4178-b4e1-a5e7c00a9263" alt="Hole.Empty" width="200" />
+
+
+
 
