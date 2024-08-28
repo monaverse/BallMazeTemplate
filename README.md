@@ -6,6 +6,10 @@ These objects can then be minted and played on the webgl based Maze Game hosted 
 
 This guide will teach you the specifications of a maze glb that make it compatible with the game.
 
+## Installation
+
+To get started, make sure you have Blender 4.1 or later installed!
+
 ## Table of Contents
 
 * [Object Hierarchy](#object-hierarchy)
