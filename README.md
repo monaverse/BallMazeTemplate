@@ -9,7 +9,7 @@ This guide will teach you the specifications of a maze glb that make it compatib
 ## Table of Contents
 
 * [Object Hierarchy](#object-hierarchy)
-* Exporting a Maze
+* [Exporting a Maze](#exporting-a-maze)
 * Testing a Maze
 * Minting a Maze
 
@@ -96,6 +96,8 @@ This object will have holes punched in it. Note that since it receives a Box Col
 
 There should be one `Hole.Empty` object for each hole on the board. 
 
+Each `Hole.Empty` object must contain `Hole` in the name.
+
 It will receive a small sphere Trigger that detects when the ball enters it.
 
 - Scale: the scale should be relative to 1.0 == 1meter
@@ -109,6 +111,8 @@ It will receive a small sphere Trigger that detects when the ball enters it.
 
 There should be one `Goal.Empty` object at the end of the maze. 
 
+The `Goal.Empty` object must contain `Goal` in the name.
+
 It will receive a small box Trigger that detects when the ball enters it.
 
 - Scale: the scale should be relative to 1.0 == 1meter
@@ -119,12 +123,53 @@ It will receive a small box Trigger that detects when the ball enters it.
 
 There should be one `SpawnPoint.Empty` object at the start of the maze. 
 
+The `SpawnPoint.Empty` object must contain `SpawnPoint` in the name.
+
 This object should contain a mesh that marks the start of the maze.
 
 - Scale: `x=1,y=1,z=1`
 - Origin: the ball with be spawned at the origin of this object.
 
 <img src="https://github.com/user-attachments/assets/24ad1905-7186-47d6-98ee-d13051bd6265" alt="SpawnPoint.Empty" width="200" />
+
+#### Ramp
+
+Ramps receive a convex mesh collider. This allows them to serve as wedge shaped ramps or walls in the maze.
+
+The collider will follow the contours of the mesh, keep them simple and make sure there are not concave surfaces. (eg. a cheese wedge is convex, a crescent moon shape is concave)
+
+A `Ramp` object must contain `Ramp` in the name.
+- Scale: `x=1,y=1,z=1`
+
+<img src="https://github.com/user-attachments/assets/b5db4028-af13-4436-9a7d-63adce49da2d" alt="Ramp" width="200" />
+
+#### Wall
+
+Walls receive a box collider. This allows them to serve as simple platforms and walls in the maze.
+
+A `Wall` object must contain `Wall` in the name.
+
+- Scale: `x=1,y=1,z=1`
+<img src="https://github.com/user-attachments/assets/9324b8f7-3490-4a41-9f3e-b98dc8da414e" alt="Wall" width="200" />
+
+#### OuterWall
+
+OuterWalls receive a box collider. This allows them to serve as an outer wall for the `BoardFloor`
+
+An `OuterWalls` object must contain `Wall` in the name.
+
+- Scale: `x=1,y=1,z=1`
+  
+<img src="https://github.com/user-attachments/assets/ff9726b3-d609-4946-bc89-e8e101edf479" alt="OuterWall" width="200" />
+
+#### Axis
+
+`Axis` meshes are for decoration, they should rotate around the axes of `BoardX` and `BoardY`
+
+<img src="https://github.com/user-attachments/assets/8b99cc30-2ec9-411f-9ee3-9dace0b8b5d8" alt="Axis" width="200" />
+
+### Exporting A Maze
+
 
 
 
