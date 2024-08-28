@@ -10,8 +10,8 @@ This guide will teach you the specifications of a maze glb that make it compatib
 
 * [Object Hierarchy](#object-hierarchy)
 * [Exporting a Maze](#exporting-a-maze)
-* Testing a Maze
-* Minting a Maze
+* [Testing a Maze](#testing-a-maze)
+* [Minting a Maze](#minting-a-maze)
 
 ### Object Hierarchy
 
@@ -32,6 +32,7 @@ When the Ball Maze game loads a maze glb, it looks for a specific object hierarc
 │   │   ├── AxisY
 │   │   └── AxisX
 ```
+---
 
 #### BallMaze
 
@@ -48,7 +49,7 @@ This object can have a mesh and should represent the outer shell of the maze. It
 
 This object should be a sphere with a diameter of 1m, the scale of this object determines the size of the ball in the game.
 
-- Max Size: `x=1m,y=1m,z=1m`
+- Size: `x=1m,y=1m,z=1m`
 - Scale: `x=1,y=1,z=1`
 
 <img src="https://github.com/user-attachments/assets/ed1f7052-23c5-41f4-9d01-8cf0ff8f697e" alt="Ball" width="200" />
@@ -75,7 +76,7 @@ Make sure that there are walls that surround the maze floor to prevent the ball 
 - Scale: `x=1,y=1,z=1`
 - Rotation: `x=0,y=0,z=0`
   - The game will rotate the board around the local x axis at a range of -5 to 5 degrees when the user moves vertically.
-- Origin: the game will pivot the board at this point.
+- Origin: `x=0,y=0,z=0` (!important)
 
 <img src="https://github.com/user-attachments/assets/0d45a4f8-99b9-47df-9595-ac52e892210c" alt="BoardY" width="200" />
 
@@ -168,6 +169,8 @@ An `OuterWalls` object must contain `Wall` in the name.
 
 <img src="https://github.com/user-attachments/assets/8b99cc30-2ec9-411f-9ee3-9dace0b8b5d8" alt="Axis" width="200" />
 
+---
+
 ### Exporting A Maze
 
 We'll be exporting this maze as a GLB file.
@@ -192,5 +195,32 @@ Make sure to also select `Include\Selected Objects` and `Mesh\Apply Modifiers` (
 
 Fill out your file name and complete the export.
 
+---
 
+### Testing A Maze
 
+To test a maze, upload it to a web server.  I typically use a pinning service like `Pinata` to host my files.
+
+I right click on the uploaded file and select `copy the link address`
+<img src="https://github.com/user-attachments/assets/b29194b0-0dd2-42ae-85f9-ddc3150e9990" alt="Export Panel" width="300" />
+
+Load the game up in your desktop browser, hold the `p` key and while holding the `p` key, press the `o` key. This allows you to load a glb manually.
+
+Paste the url to your glb file into the prompt and wait for it to load.
+
+<img src="https://github.com/user-attachments/assets/3b35f22b-3d33-4146-b459-fa7e1c4fba90" alt="Manually Load Maze" width="300" />
+
+If all goes well you should be able to play your maze! If not, then review the specs above or reach out to me on the MONA Discord to troubleshoot.
+
+---
+
+### Minting A Maze
+
+I'll compile a tutorial for setting up a contract on `manifold.xyz` later, but for now if you have a preferred contract provider, make sure that when you mint the object, you mint the glb file and add the following trait to the token:
+
+Trait: "3D Object Type"
+Value: "Ball Maze"
+
+Then register your contract with us on the MONA marketplace by reaching out on the MONA discord.
+
+Once your contract is listed, the Ball Maze game will allow other players who own the token to load it into their games!
