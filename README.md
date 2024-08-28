@@ -13,3 +13,23 @@ This guide will teach you the specifications of a maze glb that make it compatib
 * Exporting a Maze
 * Testing a Maze
 * Minting a Maze
+
+### Object Hierarchy
+
+When the Ball Maze game loads a maze glb, it looks for a specific object hierarchy to attach scripts, add physics colliders, and size the ball appropriately. This automation makes a plain 3d maze object playable!
+
+```
+├── BallMaze
+│   ├── Ball
+│   ├── BoardX
+│   │   ├── BoardY
+│   │   │   ├── BoardFloor
+│   │   │   ├── Goal.Empty
+│   │   │   ├── SpawnPoint.Empty
+│   │   │   ├── Hole.Empty
+│   │   │   ├── Wall
+│   │   │   ├── Ramp
+│   │   │   └── OuterWall
+│   │   ├── AxisY
+│   │   └── AxisX
+```
