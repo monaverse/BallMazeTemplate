@@ -96,7 +96,7 @@ This object will have holes punched in it. Note that since it receives a Box Col
 
 There should be one `Hole.Empty` object for each hole on the board. 
 
-It will receive a small Trigger that detects when the ball enters it.
+It will receive a small sphere Trigger that detects when the ball enters it.
 
 - Scale: the scale should be relative to 1.0 == 1meter
   - for example, a hole with a .3m diameter should have a cooresponding `Hole.Empty` with a scale of `x=.3,y=.3,z=.3`
@@ -104,6 +104,27 @@ It will receive a small Trigger that detects when the ball enters it.
 - Origin: the origin of each `Hole.Empty` should be at the center of the geometry of each hole on the `BoardFloor`
 
 <img src="https://github.com/user-attachments/assets/9c05cdbf-067e-4178-b4e1-a5e7c00a9263" alt="Hole.Empty" width="200" />
+
+#### Goal.Empty
+
+There should be one `Goal.Empty` object at the end of the maze. 
+
+It will receive a small box Trigger that detects when the ball enters it.
+
+- Scale: the scale should be relative to 1.0 == 1meter
+
+<img src="https://github.com/user-attachments/assets/fed28f2d-5901-422d-8e93-64401f3572b6" alt="Goal.Empty" width="200" />
+
+#### SpawnPoint.Empty
+
+There should be one `SpawnPoint.Empty` object at the start of the maze. 
+
+This object should contain a mesh that marks the start of the maze.
+
+- Scale: `x=1,y=1,z=1`
+- Origin: the ball with be spawned at the origin of this object.
+
+<img src="https://github.com/user-attachments/assets/24ad1905-7186-47d6-98ee-d13051bd6265" alt="SpawnPoint.Empty" width="200" />
 
 
 
